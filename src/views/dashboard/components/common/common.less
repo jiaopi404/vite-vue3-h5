@@ -1,0 +1,35 @@
+// 小圆点
+@fakeEleWidth: 11px;
+@pointRedius: 6px;
+
+.line-with-little-point {
+  padding-left: @fakeEleWidth;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: @pointRedius;
+    width: @pointRedius;
+    background-color: fade(@primary-color, 85%);
+    border-radius: 50%;
+  }
+}
+
+// 竖线
+.dashboard-card-gap {
+  width: 2px;
+  background-color: #eee;
+  margin: 10px;
+}
+
+// 内容，hover 变色
+.content-text {
+  &:hover {
+    color: @primary-color;
+  }
+}
