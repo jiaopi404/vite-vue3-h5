@@ -7,7 +7,7 @@ import { TagModuleNameEnum } from '/@/enums/menuFullPathEnum';
 import { getConfigBaseInfoAndSub, getDictionaryByParentId } from '/@/api/demo/system';
 import { useMessage } from '/@/hooks/web/useMessage';
 import { downloadByUrl } from '../file/download';
-import { createImgPreview } from '/@/components/Preview';
+// import { createImgPreview } from '/@/components/Preview';
 import { openWindow } from '..';
 import componentSetting from '/@/settings/componentSetting';
 
@@ -311,7 +311,7 @@ export function previewFile(file: FileI) {
     const officeTypeExt = ['.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx'];
     switch (true) {
       case imgTypeExt.indexOf(extName) > -1:
-        createImgPreview({ imageList: [url], index: 0, destroyOnClose: true });
+        // createImgPreview({ imageList: [url], index: 0, destroyOnClose: true });
         break;
       case officeTypeExt.indexOf(extName) > -1:
         const onlyOfficeUrl = configStore.GET_CONFIG_MODULE?.onlyOfficeUrl;

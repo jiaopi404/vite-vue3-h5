@@ -1,4 +1,4 @@
-import { generate } from '@ant-design/colors';
+// import { generate } from '@ant-design/colors';
 
 export const primaryColor = '#0960bd';
 
@@ -16,9 +16,10 @@ export interface GenerateColorsParams {
 }
 
 export function generateAntColors(color: string, theme: GenerateTheme = 'default') {
-  return generate(color, {
-    theme,
-  });
+  // return generate(color, {
+  //   theme,
+  // });
+  return [];
 }
 
 export function getThemeColors(color?: string) {

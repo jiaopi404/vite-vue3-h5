@@ -13,14 +13,14 @@ import { useMessage } from '/@/hooks/web/useMessage';
 import { router } from '/@/router';
 import { usePermissionStore } from '/@/store/modules/permission';
 import { RouteRecordRaw } from 'vue-router';
-import { PAGE_NOT_FOUND_ROUTE } from '/@/router/routes/basic';
+// import { PAGE_NOT_FOUND_ROUTE } from '/@/router/routes/basic';
 import { isArray } from '/@/utils/is';
 import { h } from 'vue';
 import { LxWebSocketActionEnum, useLxWebSocketStore } from './lxWebSocket';
 import { UserI } from '/#/business';
 import { getTagModuleByTagModuleName } from '/@/utils/commonServe/businessUtil';
 import { useBusinessStore } from './business';
-import { useLoginState } from '/@/views/sys/login/useLogin';
+// import { useLoginState } from '/@/views/sys/login/useLogin';
 
 interface UserState {
   userInfo: Nullable<UserI>;
@@ -198,8 +198,8 @@ export const useUserStore = defineStore({
           console.log('注销Token失败');
         }
       }
-      const { handleBackLogin } = useLoginState();
-      handleBackLogin();
+      // const { handleBackLogin } = useLoginState();
+      // handleBackLogin();
       this.setToken(undefined);
       this.setSessionTimeout(false);
       this.setUserInfo(null);

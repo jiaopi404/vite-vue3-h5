@@ -19,7 +19,7 @@ import { registerGlobComp } from '/@/components/registerGlobComp';
 // This may slow down the browser refresh speed.
 // Therefore, only enable on-demand importing in production environments .
 if (import.meta.env.DEV) {
-  import('ant-design-vue/dist/antd.less');
+  // import('ant-design-vue/dist/antd.less');
 }
 
 async function bootstrap() {

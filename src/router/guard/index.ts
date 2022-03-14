@@ -3,17 +3,14 @@ import { useAppStoreWithOut } from '/@/store/modules/app';
 import { useUserStoreWithOut } from '/@/store/modules/user';
 import { useTransitionSetting } from '/@/hooks/setting/useTransitionSetting';
 import { AxiosCanceler } from '/@/utils/http/axios/axiosCancel';
-import { Modal, notification } from 'ant-design-vue';
+// import { Modal, notification } from 'ant-design-vue';
 import { warn } from '/@/utils/log';
 import { unref } from 'vue';
 import { setRouteChange } from '/@/logics/mitt/routeChange';
-import { createPermissionGuard } from './permissionGuard';
-import { createStateGuard } from './stateGuard';
 import nProgress from 'nprogress';
 import projectSetting from '/@/settings/projectSetting';
-import { createParamMenuGuard } from './paramMenuGuard';
-import { useLxWebSocket } from '/@/hooks/web/useLxWebSocket';
-import { LoginRoute } from '../routes';
+// import { useLxWebSocket } from '/@/hooks/web/useLxWebSocket';
+// import { LoginRoute } from '../routes';
 import { useBusinessStoreWithOut } from '/@/store/modules/business';
 
 // Don't change the order of creation
@@ -26,7 +23,6 @@ export function setupRouterGuard(router: Router) {
   createProgressGuard(router);
   // createPermissionGuard(router);
   // createParamMenuGuard(router); // must after createPermissionGuard (menu has been built.)
-  createStateGuard(router);
   createLxWebSocketGuard(router);
 }
 
@@ -127,8 +123,8 @@ export function createMessageGuard(router: Router) {
   router.beforeEach(async () => {
     try {
       if (closeMessageOnSwitch) {
-        Modal.destroyAll();
-        notification.destroy();
+        // Modal.destroyAll();
+        // notification.destroy();
       }
     } catch (error) {
       warn('message guard error:' + error);
@@ -155,14 +151,15 @@ export function createProgressGuard(router: Router) {
 
 // 创建 websocket 的 guard
 export function createLxWebSocketGuard(router: Router) {
-  const { lxOpen } = useLxWebSocket();
+  // const { lxOpen } = useLxWebSocket();
+  // const { lxOpen } = useLxWebSocket();
   router.beforeEach(async (to) => {
-    if (to.name !== LoginRoute.name) {
-      setTimeout(() => {
-        // TODO：判断sessionId 是否存在
-        lxOpen(); // 非 login 时，尝试登录
-      }, 200);
-    }
+    // if (to.name !== LoginRoute.name) {
+    //   setTimeout(() => {
+    //     // TODO：判断sessionId 是否存在
+    //     lxOpen(); // 非 login 时，尝试登录
+    //   }, 200);
+    // }
     return true;
   });
 }
